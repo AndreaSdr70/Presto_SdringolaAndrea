@@ -33,7 +33,17 @@
             Ciao, {{ Auth::user()->name }}
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{ route('create.article') }}">Crea</a></li>
+            @if (Auth::user()->is_revisor)
+            <li class="nav-item">
+              <a href="{{route('revisor.index')}}" class="nav-link btn btn-outline-success btn-sm position-relative w-sm-25">
+                Zona revisore
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {{\App\Models\Article::toBeRevisedCount()}}
+                </span>
+              </a>
+            </li>
+            @endif
+            <li><a class="dropdown-item" href="{{ route('create.article') }}">Pubblica un articolo</a></li>
             <li><a class="dropdown-item" href="#"
               onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
               <li>
