@@ -12,7 +12,7 @@
             <!--Grid column-->
             <div class="col-auto">
               <p class="pt-2">
-                <strong>Sign up for our newsletter</strong>
+                <strong>Iscriviti alla nostra newsletter</strong>
               </p>
             </div>
             <!--Grid column-->
@@ -22,7 +22,7 @@
               <!-- Email input -->
               <div class="form-outline mb-4">
                 <input type="email" id="form5Example2" class="form-control" />
-                <label class="form-label" for="form5Example2">Email address</label>
+                <label class="form-label" for="form5Example2">Indirizzo E-mail</label>
               </div>
             </div>
             <!--Grid column-->
@@ -32,7 +32,7 @@
   
               <!-- Submit button -->
               <button type="submit" class="btn btn-primary mb-4">
-                Subscribe
+                Iscriviti
               </button>
             </div>
             <!--Grid column-->
@@ -46,10 +46,7 @@
       <!-- Section: Text -->
       <section class="mb-4">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-          distinctio earum repellat quaerat voluptatibus placeat nam,
-          commodi optio pariatur est quia magnam eum harum corrupti dicta,
-          aliquam sequi voluptate quas.
+          Presto.it
         </p>
       </section>
       <!-- Section: Text -->
@@ -60,8 +57,7 @@
   
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-      © 2020 Copyright:
-      <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      © 2025 Copyright: Presto.it
     </div>
     <!-- Copyright -->
   
