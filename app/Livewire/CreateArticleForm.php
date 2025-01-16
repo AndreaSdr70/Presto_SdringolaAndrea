@@ -22,11 +22,11 @@ class CreateArticleForm extends Component
     public function store()
     {
         $this->validate();
-        $this->article= Article::create([
+        $this->article = Article::create([
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price,
-            'category' => $this->category,
+            'category_id' => $this->category,
             'user_id' => Auth::id()
 
         ]);
