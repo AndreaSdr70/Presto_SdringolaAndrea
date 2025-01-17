@@ -26,7 +26,7 @@
             @endif
             @endforeach
           </ul>
-        </li>      
+        </li>        
         @auth
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -61,7 +61,15 @@
                 <li><a class="dropdown-item" href="{{ route ('register') }}">Registrati</a></li>
               </ul>
             </li>
-            @endauth           
+            @endauth
+            <form class="d-flex ms-auto" role="search" action="{{route('article.search')}}" method="GET">
+              <div class="input-group">
+                <input type="search" name="query" class="form-control" placeholder="Cerca" aria-label="search">
+                <button type="submit" class="input-group-text btn btn-outline-success" id="basic-addon2">
+                  Cerca
+                </button>
+              </div>
+            </form>
           </ul>
         </div>
       </div>
