@@ -22,3 +22,6 @@ Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->n
 
 // Search
 Route::get('/search/article', [PublicController::class, 'searchArticles'])->name('article.search');
+
+// Language
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
