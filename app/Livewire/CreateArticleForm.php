@@ -3,12 +3,15 @@
 namespace App\Livewire;
 
 use App\Models\Article;
-use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Livewire\WithFileUploads;
+use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
 
 class CreateArticleForm extends Component
 {
+    use WithFileUploads;
+
     #[Validate('required|min:5')]
     public $title;
     #[Validate('required|min:10')]
@@ -18,6 +21,17 @@ class CreateArticleForm extends Component
     #[Validate('required')]
     public $category;
     public $article;
+    public $images = [];
+    public $temporary_images;
+
+    protected function cleanForm()
+    {
+        $this->title = '';
+        $this->description = '';
+        $this->category = '';
+        $this->price = '';
+        $this->images = [];
+    }
 
     public function store()
     {
@@ -31,9 +45,34 @@ class CreateArticleForm extends Component
 
         ]);
 
-        $this->reset();
+        if (count($this->images) > 0) {
+            foreach ($this->images as $image) {
+                $this->article->images()->create(['path' => $image->store('images', 'public')]);
+            }
+        }
 
         session()->flash('success', 'Articolo creato correttamente');
+        $this->cleanForm();
+    }
+
+
+    public function updatedTemporaryImages()
+    {
+        if ($this->validate([
+            'temporary_images.*' => 'image|max:1024',
+            'temporary_images' => 'max:6'
+        ])) {
+            foreach ($this->temporary_images as $image) {
+                $this->images[] = $image;
+            }
+        }
+    }
+
+    public function removeImage($key)
+    {
+        if (in_array($key, array_keys($this->images))) {
+            unset($this->images[$key]);
+        }
     }
 
 
