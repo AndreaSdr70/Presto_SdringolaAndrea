@@ -64,7 +64,7 @@
 </div>
 @endif
 <div class="d-flex justify-content-center">
-  <button type="submit" class="btn btn-dark">{{__('ui.create')}}</button>
+  <button type="submit" class="btn btn-dark my-3">{{__('ui.create')}}</button>
 </div>
 </form>
 
